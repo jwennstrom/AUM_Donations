@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AUM.Domain"
+                   namespace="AUM.Domain">
+  <class name="Donation">
+    <id name="DonationId">
+      <generator class="identity"/>
+    </id>
+    <property name="Amount" />
+    <many-to-one class="Donor" column="DonorId" name="Donor" cascade="save-update" />
+    <property name="CreatedOn" not-null="false"></property>
+  </class>
+</hibernate-mapping>

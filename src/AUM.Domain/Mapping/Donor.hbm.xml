@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AUM.Domain"
+                   namespace="AUM.Domain">
+  <class name="Donor">
+    <id name="DonorId">
+      <generator class="identity"/>
+    </id>
+    <property name="Name"></property>
+    <property name="Phone"></property>
+    <property name="CreatedOn" not-null="false"></property>
+    <bag name="Donations" inverse="true" cascade="all-delete-orphan">
+      <key column="DonorId"/>
+      <one-to-many class="Donation"/>
+    </bag>  
+  </class>
+</hibernate-mapping>
