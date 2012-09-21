@@ -16,8 +16,8 @@ namespace AUM.Console
                 var d = new Donor
                 {
                     CreatedOn = DateTime.Now,
-                    Name = "Jared Wennstrom",
-                    Phone = "512-947-5913"
+                    Name = "Joe Donor",
+                    Phone = "512-555-1212"
                 };
 
                 var dt = new Donation
