@@ -120,6 +120,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AUM.Core\AUM.Core.csproj">
+      <Project>{408E470F-EC21-4284-846E-705213E70DD8}</Project>
+      <Name>AUM.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AUM.Data\AUM.Data.csproj">
       <Project>{3804B547-045D-4644-92FC-FBA5CBDF59CE}</Project>
       <Name>AUM.Data</Name>

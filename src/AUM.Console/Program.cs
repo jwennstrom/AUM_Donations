@@ -13,23 +13,38 @@ namespace AUM.Console
         {
             using (var session = NHibernateHelper.OpenSession())
             {
-                var d = new Donor
-                {
-                    CreatedOn = DateTime.Now,
-                    Name = "Joe Donor",
-                    Phone = "512-555-1212"
-                };
+                //using (var uow = new NHibernateUnitOfWork())
+                //{
+                //    var donorRep = new Repository<Donor>(uow.Session);
+                //    var donationRep = new Repository<Donation>(uow.Session);
 
-                var dt = new Donation
-                {
-                    Donor = d,
-                    Amount=100.25m,
-                    CreatedOn = DateTime.Now,
-                    DateOfDonation = DateTime.Now
-                };
+                //    var d = new Donor
+                //    {
+                //        CreatedOn = DateTime.Now,
+                //        Name = "Joe Donor",
+                //        Phone = "512-555-1212"
+                //    };
 
-                session.SaveOrUpdate(dt);
-                session.Flush();
+                //    var dt = new Donation
+                //    {
+                //        Donor = d,
+                //        Amount = 100.25m,
+                //        CreatedOn = DateTime.Now,
+                //        DateOfDonation = DateTime.Now
+                //    };
+
+                //    donorRep.Add(d);
+                //    donationRep.Add(dt);
+
+                //    uow.Commit();
+                //}
+
+                // Sample of fetching a row
+                using (var uow = new NHibernateUnitOfWork())
+                {
+                    var donorRep = new Repository<Donor>(uow.Session);
+                    var donors = donorRep.Select(x=>x);
+                }
             }
             
         }
